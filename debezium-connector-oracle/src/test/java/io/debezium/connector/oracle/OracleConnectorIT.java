@@ -598,7 +598,8 @@ public class OracleConnectorIT extends AbstractConnectorTest {
 
         expectedRecordCount += 1;
 
-        connection.execute("UPDATE debezium.customer SET name = 'Bruce', f_core_aaaaaaaaadddddddddddddd = 2345.67, registered = TO_DATE('2018-03-23', 'yyyy-mm-dd') WHERE id = 1");
+        connection.execute(
+                "UPDATE debezium.customer SET name = 'Bruce', f_core_aaaaaaaaadddddddddddddd = 2345.67, registered = TO_DATE('2018-03-23', 'yyyy-mm-dd') WHERE id = 1");
         connection.execute("COMMIT");
         expectedRecordCount += 1;
 
